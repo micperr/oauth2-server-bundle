@@ -9,6 +9,8 @@ OAuth2ServerBundle is a Symfony bundle integrating the [oauth2-server](https://g
 
 **Work in progress**
 
+Fork of [Trikoder/OAuth2-Bundle](https://github.com).
+
 ## License
 
 See the [LICENSE](LICENSE) file for license rights and limitations (MIT).
