@@ -111,16 +111,16 @@ final class TestKernel extends Kernel implements CompilerPassInterface
         $routes->import('@LeagueOAuth2ServerBundle/Resources/config/routes.xml');
 
         $routes
-            ->add('/security-test', 'League\Bundle\OAuth2ServerBundle\Tests\Fixtures\SecurityTestController:helloAction')
+            ->add('/security-test', 'League\Bundle\OAuth2ServerBundle\Tests\Fixtures\SecurityTestController::helloAction')
         ;
 
         $routes
-            ->add('/security-test-scopes', 'League\Bundle\OAuth2ServerBundle\Tests\Fixtures\SecurityTestController:scopeAction')
+            ->add('/security-test-scopes', 'League\Bundle\OAuth2ServerBundle\Tests\Fixtures\SecurityTestController::scopeAction')
             ->setDefault('oauth2_scopes', ['fancy'])
         ;
 
         $routes
-            ->add('/security-test-roles', 'League\Bundle\OAuth2ServerBundle\Tests\Fixtures\SecurityTestController:rolesAction')
+            ->add('/security-test-roles', 'League\Bundle\OAuth2ServerBundle\Tests\Fixtures\SecurityTestController::rolesAction')
             ->setDefault('oauth2_scopes', ['fancy'])
         ;
     }

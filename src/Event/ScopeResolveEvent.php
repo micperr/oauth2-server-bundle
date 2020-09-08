@@ -14,7 +14,7 @@ final class ScopeResolveEvent extends Event
     /**
      * @var Scope[]
      */
-    private $scopes = [];
+    private $scopes;
 
     /**
      * @var Grant
@@ -26,9 +26,6 @@ final class ScopeResolveEvent extends Event
      */
     private $client;
 
-    /**
-     * @var string|null
-     */
     private $userIdentifier;
 
     public function __construct(array $scopes, Grant $grant, Client $client, ?string $userIdentifier)

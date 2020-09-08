@@ -51,12 +51,6 @@ final class ExtensionTest extends TestCase
         yield 'Client credentials grant can be disabled' => [
             ClientCredentialsGrant::class, 'enable_client_credentials_grant', false,
         ];
-        yield 'Password grant can be enabled' => [
-            PasswordGrant::class, 'enable_password_grant', true,
-        ];
-        yield 'Password grant can be disabled' => [
-            PasswordGrant::class, 'enable_password_grant', false,
-        ];
         yield 'Refresh token grant can be enabled' => [
             RefreshTokenGrant::class, 'enable_refresh_token_grant', true,
         ];
@@ -119,7 +113,6 @@ final class ExtensionTest extends TestCase
                     'private_key' => 'foo',
                     'encryption_key' => 'foo',
                     'enable_client_credentials_grant' => $options['enable_client_credentials_grant'] ?? true,
-                    'enable_password_grant' => $options['enable_password_grant'] ?? true,
                     'enable_refresh_token_grant' => $options['enable_refresh_token_grant'] ?? true,
                 ],
                 'resource_server' => [

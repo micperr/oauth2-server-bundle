@@ -11,9 +11,6 @@ use League\Bundle\OAuth2ServerBundle\Model\Client;
 
 final class ClientManager implements ClientManagerInterface
 {
-    /**
-     * @var EntityManagerInterface
-     */
     private $entityManager;
 
     public function __construct(EntityManagerInterface $entityManager)

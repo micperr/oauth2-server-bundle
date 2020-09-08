@@ -4,14 +4,9 @@
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
     <services>
-        <service id="League\Bundle\OAuth2ServerBundle\Service\ClientFinderInterface" alias="League\Bundle\OAuth2ServerBundle\Manager\ClientManagerInterface" />
-
         <!-- The league repositories -->
         <service id="League\Bundle\OAuth2ServerBundle\League\Repository\ClientRepository">
             <argument type="service" id="League\Bundle\OAuth2ServerBundle\Manager\ClientManagerInterface" />
-        </service>
-        <service id="league.oauth2-server.league.repository.client_repository" alias="League\Bundle\OAuth2ServerBundle\League\Repository\ClientRepository">
-            <deprecated>The "%alias_id%" service alias is deprecated and will be removed in v4.</deprecated>
         </service>
         <service id="League\OAuth2\Server\Repositories\ClientRepositoryInterface" alias="League\Bundle\OAuth2ServerBundle\League\Repository\ClientRepository" />
 
@@ -20,17 +15,11 @@
             <argument type="service" id="League\Bundle\OAuth2ServerBundle\Manager\ClientManagerInterface" />
             <argument type="service" id="League\Bundle\OAuth2ServerBundle\Converter\ScopeConverter" />
         </service>
-        <service id="league.oauth2-server.league.repository.access_token_repository" alias="League\Bundle\OAuth2ServerBundle\League\Repository\AccessTokenRepository">
-            <deprecated>The "%alias_id%" service alias is deprecated and will be removed in v4.</deprecated>
-        </service>
         <service id="League\OAuth2\Server\Repositories\AccessTokenRepositoryInterface" alias="League\Bundle\OAuth2ServerBundle\League\Repository\AccessTokenRepository" />
 
         <service id="League\Bundle\OAuth2ServerBundle\League\Repository\RefreshTokenRepository">
             <argument type="service" id="League\Bundle\OAuth2ServerBundle\Manager\RefreshTokenManagerInterface" />
             <argument type="service" id="League\Bundle\OAuth2ServerBundle\Manager\AccessTokenManagerInterface" />
-        </service>
-        <service id="league.oauth2-server.league.repository.refresh_token_repository" alias="League\Bundle\OAuth2ServerBundle\League\Repository\RefreshTokenRepository">
-            <deprecated>The "%alias_id%" service alias is deprecated and will be removed in v4.</deprecated>
         </service>
         <service id="League\OAuth2\Server\Repositories\RefreshTokenRepositoryInterface" alias="League\Bundle\OAuth2ServerBundle\League\Repository\RefreshTokenRepository" />
 
@@ -40,28 +29,12 @@
             <argument type="service" id="League\Bundle\OAuth2ServerBundle\Converter\ScopeConverter" />
             <argument type="service" id="Symfony\Component\EventDispatcher\EventDispatcherInterface" />
         </service>
-        <service id="league.oauth2-server.league.repository.scope_repository" alias="League\Bundle\OAuth2ServerBundle\League\Repository\ScopeRepository">
-            <deprecated>The "%alias_id%" service alias is deprecated and will be removed in v4.</deprecated>
-        </service>
         <service id="League\OAuth2\Server\Repositories\ScopeRepositoryInterface" alias="League\Bundle\OAuth2ServerBundle\League\Repository\ScopeRepository" />
-
-        <service id="League\Bundle\OAuth2ServerBundle\League\Repository\UserRepository">
-            <argument type="service" id="League\Bundle\OAuth2ServerBundle\Manager\ClientManagerInterface" />
-            <argument type="service" id="Symfony\Component\EventDispatcher\EventDispatcherInterface" />
-            <argument type="service" id="League\Bundle\OAuth2ServerBundle\Converter\UserConverter" />
-        </service>
-        <service id="league.oauth2-server.league.repository.user_repository" alias="League\Bundle\OAuth2ServerBundle\League\Repository\UserRepository">
-            <deprecated>The "%alias_id%" service alias is deprecated and will be removed in v4.</deprecated>
-        </service>
-        <service id="League\OAuth2\Server\Repositories\UserRepositoryInterface" alias="League\Bundle\OAuth2ServerBundle\League\Repository\UserRepository" />
 
         <service id="League\Bundle\OAuth2ServerBundle\League\Repository\AuthCodeRepository">
             <argument type="service" id="League\Bundle\OAuth2ServerBundle\Manager\AuthorizationCodeManagerInterface" />
             <argument type="service" id="League\Bundle\OAuth2ServerBundle\Manager\ClientManagerInterface" />
             <argument type="service" id="League\Bundle\OAuth2ServerBundle\Converter\ScopeConverter" />
-        </service>
-        <service id="league.oauth2-server.league.repository.auth_code_repository" alias="League\Bundle\OAuth2ServerBundle\League\Repository\AuthCodeRepository">
-            <deprecated>The "%alias_id%" service alias is deprecated and will be removed in v4.</deprecated>
         </service>
         <service id="League\OAuth2\Server\Repositories\AuthCodeRepositoryInterface" alias="League\Bundle\OAuth2ServerBundle\League\Repository\AuthCodeRepository" />
 
@@ -71,23 +44,14 @@
             <argument key="$resourceServer" type="service" id="League\OAuth2\Server\ResourceServer" />
             <argument key="$oauth2TokenFactory" type="service" id="League\Bundle\OAuth2ServerBundle\Security\Authentication\Token\OAuth2TokenFactory" />
         </service>
-        <service id="league.oauth2-server.security.authentication.provider.oauth2_provider" alias="League\Bundle\OAuth2ServerBundle\Security\Authentication\Provider\OAuth2Provider">
-            <deprecated>The "%alias_id%" service alias is deprecated and will be removed in v4.</deprecated>
-        </service>
 
         <service id="League\Bundle\OAuth2ServerBundle\Security\EntryPoint\OAuth2EntryPoint" />
-        <service id="league.oauth2-server.security.entry_point.oauth2_entry_point" alias="League\Bundle\OAuth2ServerBundle\Security\EntryPoint\OAuth2EntryPoint">
-            <deprecated>The "%alias_id%" service alias is deprecated and will be removed in v4.</deprecated>
-        </service>
 
         <service id="League\Bundle\OAuth2ServerBundle\Security\Firewall\OAuth2Listener">
             <argument type="service" id="security.token_storage" />
             <argument type="service" id="security.authentication.manager" />
             <argument type="service" id="sensio_framework_extra.psr7.http_message_factory" />
             <argument key="$oauth2TokenFactory" type="service" id="League\Bundle\OAuth2ServerBundle\Security\Authentication\Token\OAuth2TokenFactory" />
-        </service>
-        <service id="league.oauth2-server.security.firewall.oauth2_listener" alias="League\Bundle\OAuth2ServerBundle\Security\Firewall\OAuth2Listener">
-            <deprecated>The "%alias_id%" service alias is deprecated and will be removed in v4.</deprecated>
         </service>
 
         <service id="League\Bundle\OAuth2ServerBundle\League\AuthorizationServer\GrantConfigurator">
@@ -116,12 +80,6 @@
         <service id="League\OAuth2\Server\Grant\ClientCredentialsGrant" />
         <service id="league.oauth2.server.grant.client_credentials_grant" alias="League\OAuth2\Server\Grant\ClientCredentialsGrant" />
 
-        <service id="League\OAuth2\Server\Grant\PasswordGrant">
-            <argument type="service" id="League\OAuth2\Server\Repositories\UserRepositoryInterface" />
-            <argument type="service" id="League\OAuth2\Server\Repositories\RefreshTokenRepositoryInterface" />
-        </service>
-        <service id="league.oauth2.server.grant.password_grant" alias="League\OAuth2\Server\Grant\PasswordGrant" />
-
         <service id="League\OAuth2\Server\Grant\RefreshTokenGrant">
             <argument type="service" id="League\OAuth2\Server\Repositories\RefreshTokenRepositoryInterface" />
         </service>
@@ -134,11 +92,6 @@
         </service>
         <service id="league.oauth2.server.grant.auth_code_grant" alias="League\OAuth2\Server\Grant\AuthCodeGrant" />
 
-        <service id="League\OAuth2\Server\Grant\ImplicitGrant">
-            <argument key="$accessTokenTTL" />
-        </service>
-        <service id="league.oauth2.server.grant.implicit_grant" alias="League\OAuth2\Server\Grant\ImplicitGrant" />
-
         <!-- Authorization controller -->
         <service id="League\Bundle\OAuth2ServerBundle\Controller\AuthorizationController">
             <argument type="service" id="League\OAuth2\Server\AuthorizationServer" />
@@ -148,31 +101,19 @@
             <argument type="service" id="League\Bundle\OAuth2ServerBundle\Manager\ClientManagerInterface" />
             <tag name="controller.service_arguments" />
         </service>
-        <service id="league.oauth2-server.controller.authorization_controller" alias="League\Bundle\OAuth2ServerBundle\Controller\AuthorizationController">
-            <deprecated>The "%alias_id%" service alias is deprecated and will be removed in v4.</deprecated>
-        </service>
 
         <!-- Authorization listeners -->
         <service id="League\Bundle\OAuth2ServerBundle\EventListener\AuthorizationRequestUserResolvingListener">
             <argument type="service" id="Symfony\Component\Security\Core\Security" />
             <tag name="kernel.event_listener" event="league.oauth2-server.authorization_request_resolve" method="onAuthorizationRequest" priority="1024" />
         </service>
-        <service id="league.oauth2-server.event_listener.authorization.user" alias="League\Bundle\OAuth2ServerBundle\EventListener\AuthorizationRequestUserResolvingListener">
-            <deprecated>The "%alias_id%" service alias is deprecated and will be removed in v4.</deprecated>
-        </service>
 
         <service id="League\Bundle\OAuth2ServerBundle\EventListener\ConvertExceptionToResponseListener" />
-        <service id="league.oauth2-server.event_listener.authorization.convert_to_response" alias="League\Bundle\OAuth2ServerBundle\EventListener\ConvertExceptionToResponseListener">
-            <deprecated>The "%alias_id%" service alias is deprecated and will be removed in v4.</deprecated>
-        </service>
 
         <!-- Token controller -->
         <service id="League\Bundle\OAuth2ServerBundle\Controller\TokenController">
             <argument type="service" id="League\OAuth2\Server\AuthorizationServer" />
             <tag name="controller.service_arguments" />
-        </service>
-        <service id="league.oauth2-server.controller.token_controller" alias="League\Bundle\OAuth2ServerBundle\Controller\TokenController">
-            <deprecated>The "%alias_id%" service alias is deprecated and will be removed in v4.</deprecated>
         </service>
 
         <!-- Commands -->
@@ -180,32 +121,20 @@
             <argument type="service" id="League\Bundle\OAuth2ServerBundle\Manager\ClientManagerInterface" />
             <tag name="console.command" />
         </service>
-        <service id="league.oauth2-server.command.create_client_command" alias="League\Bundle\OAuth2ServerBundle\Command\CreateClientCommand">
-            <deprecated>The "%alias_id%" service alias is deprecated and will be removed in v4.</deprecated>
-        </service>
 
         <service id="League\Bundle\OAuth2ServerBundle\Command\UpdateClientCommand">
             <argument type="service" id="League\Bundle\OAuth2ServerBundle\Manager\ClientManagerInterface" />
             <tag name="console.command" />
-        </service>
-        <service id="league.oauth2-server.command.update_client_command" alias="League\Bundle\OAuth2ServerBundle\Command\UpdateClientCommand">
-            <deprecated>The "%alias_id%" service alias is deprecated and will be removed in v4.</deprecated>
         </service>
 
         <service id="League\Bundle\OAuth2ServerBundle\Command\DeleteClientCommand">
             <argument type="service" id="League\Bundle\OAuth2ServerBundle\Manager\ClientManagerInterface" />
             <tag name="console.command" />
         </service>
-        <service id="league.oauth2-server.command.delete_client_command" alias="League\Bundle\OAuth2ServerBundle\Command\DeleteClientCommand">
-            <deprecated>The "%alias_id%" service alias is deprecated and will be removed in v4.</deprecated>
-        </service>
 
         <service id="League\Bundle\OAuth2ServerBundle\Command\ListClientsCommand">
             <argument type="service" id="League\Bundle\OAuth2ServerBundle\Manager\ClientManagerInterface" />
             <tag name="console.command" />
-        </service>
-        <service id="league.oauth2-server.command.list_clients_command" alias="League\Bundle\OAuth2ServerBundle\Command\ListClientsCommand">
-            <deprecated>The "%alias_id%" service alias is deprecated and will be removed in v4.</deprecated>
         </service>
 
         <service id="League\Bundle\OAuth2ServerBundle\Command\ClearExpiredTokensCommand">
@@ -214,29 +143,17 @@
             <argument type="service" id="League\Bundle\OAuth2ServerBundle\Manager\AuthorizationCodeManagerInterface" />
             <tag name="console.command" />
         </service>
-        <service id="league.oauth2-server.command.clear_expired_tokens_command" alias="League\Bundle\OAuth2ServerBundle\Command\ClearExpiredTokensCommand">
-            <deprecated>The "%alias_id%" service alias is deprecated and will be removed in v4.</deprecated>
-        </service>
 
         <!-- Utility services -->
         <service id="League\Bundle\OAuth2ServerBundle\Converter\UserConverter" />
-        <service id="league.oauth2-server.converter.user_converter" alias="League\Bundle\OAuth2ServerBundle\Converter\UserConverter">
-            <deprecated>The "%alias_id%" service alias is deprecated and will be removed in v4.</deprecated>
-        </service>
         <service id="League\Bundle\OAuth2ServerBundle\Converter\UserConverterInterface" alias="League\Bundle\OAuth2ServerBundle\Converter\UserConverter" />
 
         <service id="League\Bundle\OAuth2ServerBundle\Converter\ScopeConverter" />
-        <service id="league.oauth2-server.converter.scope_converter" alias="League\Bundle\OAuth2ServerBundle\Converter\ScopeConverter">
-            <deprecated>The "%alias_id%" service alias is deprecated and will be removed in v4.</deprecated>
-        </service>
         <service id="League\Bundle\OAuth2ServerBundle\Converter\ScopeConverterInterface" alias="League\Bundle\OAuth2ServerBundle\Converter\ScopeConverter" />
 
         <service id="League\Bundle\OAuth2ServerBundle\Event\AuthorizationRequestResolveEventFactory">
             <argument type="service" id="League\Bundle\OAuth2ServerBundle\Converter\ScopeConverter" />
             <argument type="service" id="League\Bundle\OAuth2ServerBundle\Manager\ClientManagerInterface" />
-        </service>
-        <service id="league.oauth2-server.event.authorization_request_resolve_event_factory" alias="League\Bundle\OAuth2ServerBundle\Event\AuthorizationRequestResolveEventFactory">
-            <deprecated>The "%alias_id%" service alias is deprecated and will be removed in v4.</deprecated>
         </service>
 
         <service id="League\Bundle\OAuth2ServerBundle\Security\Authentication\Token\OAuth2TokenFactory">

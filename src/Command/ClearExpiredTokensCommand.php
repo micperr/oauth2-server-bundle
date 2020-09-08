@@ -17,19 +17,8 @@ final class ClearExpiredTokensCommand extends Command
 {
     protected static $defaultName = 'league:oauth2-server:clear-expired-tokens';
 
-    /**
-     * @var AccessTokenManagerInterface
-     */
     private $accessTokenManager;
-
-    /**
-     * @var RefreshTokenManagerInterface
-     */
     private $refreshTokenManager;
-
-    /**
-     * @var AuthorizationCodeManagerInterface
-     */
     private $authorizationCodeManager;
 
     public function __construct(

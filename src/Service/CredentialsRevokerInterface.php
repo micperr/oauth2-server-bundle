@@ -10,8 +10,6 @@ use League\Bundle\OAuth2ServerBundle\Model\Client;
 /**
  * Service responsible for revoking credentials on client-level and user-level.
  * Credentials = access tokens, refresh tokens and authorization codes.
- *
- * @api
  */
 interface CredentialsRevokerInterface
 {

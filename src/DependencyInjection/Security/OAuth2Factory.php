@@ -18,7 +18,7 @@ final class OAuth2Factory implements SecurityFactoryInterface
     /**
      * {@inheritdoc}
      */
-    public function create(ContainerBuilder $container, $id, $config, $userProvider, $defaultEntryPoint)
+    public function create(ContainerBuilder $container, string $id, array $config, string $userProvider, ?string $defaultEntryPoint)
     {
         $providerId = 'security.authentication.provider.oauth2.' . $id;
         $container
@@ -55,6 +55,5 @@ final class OAuth2Factory implements SecurityFactoryInterface
      */
     public function addConfiguration(NodeDefinition $node)
     {
-        return;
     }
 }

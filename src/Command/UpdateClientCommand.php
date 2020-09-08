@@ -20,9 +20,6 @@ final class UpdateClientCommand extends Command
 {
     protected static $defaultName = 'league:oauth2-server:update-client';
 
-    /**
-     * @var ClientManagerInterface
-     */
     private $clientManager;
 
     public function __construct(ClientManagerInterface $clientManager)

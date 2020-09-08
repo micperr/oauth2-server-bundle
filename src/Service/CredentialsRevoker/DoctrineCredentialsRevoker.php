@@ -14,9 +14,6 @@ use League\Bundle\OAuth2ServerBundle\Service\CredentialsRevokerInterface;
 
 final class DoctrineCredentialsRevoker implements CredentialsRevokerInterface
 {
-    /**
-     * @var EntityManagerInterface
-     */
     private $entityManager;
 
     public function __construct(EntityManagerInterface $entityManager)

@@ -11,14 +11,7 @@ use League\Bundle\OAuth2ServerBundle\Manager\ClientManagerInterface;
 
 class AuthorizationRequestResolveEventFactory
 {
-    /**
-     * @var ScopeConverterInterface
-     */
     private $scopeConverter;
-
-    /**
-     * @var ClientManagerInterface
-     */
     private $clientManager;
 
     public function __construct(ScopeConverterInterface $scopeConverter, ClientManagerInterface $clientManager)

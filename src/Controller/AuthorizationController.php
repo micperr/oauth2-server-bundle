@@ -18,29 +18,10 @@ use League\Bundle\OAuth2ServerBundle\OAuth2Events;
 
 final class AuthorizationController
 {
-    /**
-     * @var AuthorizationServer
-     */
     private $server;
-
-    /**
-     * @var EventDispatcherInterface
-     */
     private $eventDispatcher;
-
-    /**
-     * @var AuthorizationRequestResolveEventFactory
-     */
     private $eventFactory;
-
-    /**
-     * @var UserConverterInterface
-     */
     private $userConverter;
-
-    /**
-     * @var ClientManagerInterface
-     */
     private $clientManager;
 
     public function __construct(

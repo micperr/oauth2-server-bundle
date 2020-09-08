@@ -21,9 +21,6 @@ final class CreateClientCommand extends Command
 {
     protected static $defaultName = 'league:oauth2-server:create-client';
 
-    /**
-     * @var ClientManagerInterface
-     */
     private $clientManager;
 
     public function __construct(ClientManagerInterface $clientManager)

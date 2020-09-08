@@ -52,7 +52,7 @@ Options:
 #### Restrict which grant types a client can access
 
 ```sh
-$ bin/console league:oauth2-server:update-client --grant-type client_credentials --grant-type password foo
+$ bin/console league:oauth2-server:update-client --grant-type client_credentials foo
 ```
 
 #### Assign which scopes the client will receive

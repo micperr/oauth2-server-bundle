@@ -55,42 +55,6 @@ final class TokenEndpointTest extends AbstractAcceptanceTest
         $this->assertNotEmpty($jsonResponse['access_token']);
     }
 
-    public function testSuccessfulPasswordRequest(): void
-    {
-        $this->client
-            ->getContainer()
-            ->get('event_dispatcher')
-            ->addListener('league.oauth2-server.user_resolve', static function (UserResolveEvent $event): void {
-                $event->setUser(FixtureFactory::createUser());
-            });
-
-        timecop_freeze(new DateTimeImmutable());
-
-        try {
-            $this->client->request('POST', '/token', [
-                'client_id' => 'foo',
-                'client_secret' => 'secret',
-                'grant_type' => 'password',
-                'username' => 'user',
-                'password' => 'pass',
-            ]);
-        } finally {
-            timecop_return();
-        }
-
-        $response = $this->client->getResponse();
-
-        $this->assertSame(200, $response->getStatusCode());
-        $this->assertSame('application/json; charset=UTF-8', $response->headers->get('Content-Type'));
-
-        $jsonResponse = json_decode($response->getContent(), true);
-
-        $this->assertSame('Bearer', $jsonResponse['token_type']);
-        $this->assertSame(3600, $jsonResponse['expires_in']);
-        $this->assertNotEmpty($jsonResponse['access_token']);
-        $this->assertNotEmpty($jsonResponse['refresh_token']);
-    }
-
     public function testSuccessfulRefreshTokenRequest(): void
     {
         $refreshToken = $this->client
