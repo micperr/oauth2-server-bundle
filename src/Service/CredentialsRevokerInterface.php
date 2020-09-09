@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace League\Bundle\OAuth2ServerBundle\Service;
 
-use Symfony\Component\Security\Core\User\UserInterface;
 use League\Bundle\OAuth2ServerBundle\Model\Client;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * Service responsible for revoking credentials on client-level and user-level.

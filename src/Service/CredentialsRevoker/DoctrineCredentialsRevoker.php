@@ -5,12 +5,12 @@ declare(strict_types=1);
 namespace League\Bundle\OAuth2ServerBundle\Service\CredentialsRevoker;
 
 use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Component\Security\Core\User\UserInterface;
 use League\Bundle\OAuth2ServerBundle\Model\AccessToken;
 use League\Bundle\OAuth2ServerBundle\Model\AuthorizationCode;
 use League\Bundle\OAuth2ServerBundle\Model\Client;
 use League\Bundle\OAuth2ServerBundle\Model\RefreshToken;
 use League\Bundle\OAuth2ServerBundle\Service\CredentialsRevokerInterface;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 final class DoctrineCredentialsRevoker implements CredentialsRevokerInterface
 {

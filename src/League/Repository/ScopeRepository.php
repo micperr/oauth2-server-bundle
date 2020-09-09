@@ -4,10 +4,6 @@ declare(strict_types=1);
 
 namespace League\Bundle\OAuth2ServerBundle\League\Repository;
 
-use League\OAuth2\Server\Entities\ClientEntityInterface;
-use League\OAuth2\Server\Exception\OAuthServerException;
-use League\OAuth2\Server\Repositories\ScopeRepositoryInterface;
-use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use League\Bundle\OAuth2ServerBundle\Converter\ScopeConverterInterface;
 use League\Bundle\OAuth2ServerBundle\Event\ScopeResolveEvent;
 use League\Bundle\OAuth2ServerBundle\Manager\ClientManagerInterface;
@@ -15,7 +11,10 @@ use League\Bundle\OAuth2ServerBundle\Manager\ScopeManagerInterface;
 use League\Bundle\OAuth2ServerBundle\Model\Client as ClientModel;
 use League\Bundle\OAuth2ServerBundle\Model\Grant as GrantModel;
 use League\Bundle\OAuth2ServerBundle\Model\Scope as ScopeModel;
-use League\Bundle\OAuth2ServerBundle\OAuth2Events;
+use League\OAuth2\Server\Entities\ClientEntityInterface;
+use League\OAuth2\Server\Exception\OAuthServerException;
+use League\OAuth2\Server\Repositories\ScopeRepositoryInterface;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 final class ScopeRepository implements ScopeRepositoryInterface
 {

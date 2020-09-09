@@ -4,21 +4,21 @@ declare(strict_types=1);
 
 namespace League\Bundle\OAuth2ServerBundle\DependencyInjection\Security;
 
+use League\Bundle\OAuth2ServerBundle\Security\Authentication\Provider\OAuth2Provider;
+use League\Bundle\OAuth2ServerBundle\Security\EntryPoint\OAuth2EntryPoint;
+use League\Bundle\OAuth2ServerBundle\Security\Firewall\OAuth2Listener;
 use Symfony\Bundle\SecurityBundle\DependencyInjection\Security\Factory\SecurityFactoryInterface;
 use Symfony\Component\Config\Definition\Builder\NodeDefinition;
 use Symfony\Component\DependencyInjection\ChildDefinition;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Reference;
-use League\Bundle\OAuth2ServerBundle\Security\Authentication\Provider\OAuth2Provider;
-use League\Bundle\OAuth2ServerBundle\Security\EntryPoint\OAuth2EntryPoint;
-use League\Bundle\OAuth2ServerBundle\Security\Firewall\OAuth2Listener;
 
 final class OAuth2Factory implements SecurityFactoryInterface
 {
     /**
      * {@inheritdoc}
      */
-    public function create(ContainerBuilder $container, string $id, array $config, string $userProvider, ?string $defaultEntryPoint)
+    public function create(ContainerBuilder $container, $id, $config, $userProvider, $defaultEntryPoint)
     {
         $providerId = 'security.authentication.provider.oauth2.' . $id;
         $container

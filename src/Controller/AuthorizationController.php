@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace League\Bundle\OAuth2ServerBundle\Controller;
 
+use League\Bundle\OAuth2ServerBundle\Converter\UserConverterInterface;
+use League\Bundle\OAuth2ServerBundle\Event\AuthorizationRequestResolveEvent;
+use League\Bundle\OAuth2ServerBundle\Event\AuthorizationRequestResolveEventFactory;
+use League\Bundle\OAuth2ServerBundle\Manager\ClientManagerInterface;
+use League\Bundle\OAuth2ServerBundle\OAuth2Events;
 use League\OAuth2\Server\AuthorizationServer;
 use League\OAuth2\Server\Exception\OAuthServerException;
 use Psr\Http\Message\ResponseFactoryInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
-use League\Bundle\OAuth2ServerBundle\Converter\UserConverterInterface;
-use League\Bundle\OAuth2ServerBundle\Event\AuthorizationRequestResolveEvent;
-use League\Bundle\OAuth2ServerBundle\Event\AuthorizationRequestResolveEventFactory;
-use League\Bundle\OAuth2ServerBundle\Manager\ClientManagerInterface;
-use League\Bundle\OAuth2ServerBundle\OAuth2Events;
 
 final class AuthorizationController
 {

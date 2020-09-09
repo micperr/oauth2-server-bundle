@@ -5,11 +5,11 @@ declare(strict_types=1);
 namespace League\Bundle\OAuth2ServerBundle\Tests\Unit;
 
 use DateTimeImmutable;
-use PHPUnit\Framework\TestCase;
-use ReflectionProperty;
 use League\Bundle\OAuth2ServerBundle\Manager\InMemory\AccessTokenManager as InMemoryAccessTokenManager;
 use League\Bundle\OAuth2ServerBundle\Model\AccessToken;
 use League\Bundle\OAuth2ServerBundle\Model\Client;
+use PHPUnit\Framework\TestCase;
+use ReflectionProperty;
 
 final class InMemoryAccessTokenManagerTest extends TestCase
 {

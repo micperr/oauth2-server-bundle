@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace League\Bundle\OAuth2ServerBundle\Tests\Integration;
 
 use DateTimeImmutable;
-use League\Bundle\OAuth2ServerBundle\Event\UserResolveEvent;
 use League\Bundle\OAuth2ServerBundle\Model\AccessToken;
 use League\Bundle\OAuth2ServerBundle\Model\RefreshToken;
 use League\Bundle\OAuth2ServerBundle\Tests\Fixtures\FixtureFactory;

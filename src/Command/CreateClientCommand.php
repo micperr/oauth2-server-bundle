@@ -5,17 +5,17 @@ declare(strict_types=1);
 namespace League\Bundle\OAuth2ServerBundle\Command;
 
 use InvalidArgumentException;
+use League\Bundle\OAuth2ServerBundle\Manager\ClientManagerInterface;
+use League\Bundle\OAuth2ServerBundle\Model\Client;
+use League\Bundle\OAuth2ServerBundle\Model\Grant;
+use League\Bundle\OAuth2ServerBundle\Model\RedirectUri;
+use League\Bundle\OAuth2ServerBundle\Model\Scope;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
-use League\Bundle\OAuth2ServerBundle\Manager\ClientManagerInterface;
-use League\Bundle\OAuth2ServerBundle\Model\Client;
-use League\Bundle\OAuth2ServerBundle\Model\Grant;
-use League\Bundle\OAuth2ServerBundle\Model\RedirectUri;
-use League\Bundle\OAuth2ServerBundle\Model\Scope;
 
 final class CreateClientCommand extends Command
 {

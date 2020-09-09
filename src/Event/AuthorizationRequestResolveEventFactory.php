@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace League\Bundle\OAuth2ServerBundle\Event;
 
-use League\OAuth2\Server\RequestTypes\AuthorizationRequest;
-use RuntimeException;
 use League\Bundle\OAuth2ServerBundle\Converter\ScopeConverterInterface;
 use League\Bundle\OAuth2ServerBundle\Manager\ClientManagerInterface;
+use League\OAuth2\Server\RequestTypes\AuthorizationRequest;
+use RuntimeException;
 
 class AuthorizationRequestResolveEventFactory
 {

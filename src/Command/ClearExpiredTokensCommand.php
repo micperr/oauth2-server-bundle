@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace League\Bundle\OAuth2ServerBundle\Command;
 
+use League\Bundle\OAuth2ServerBundle\Manager\AccessTokenManagerInterface;
+use League\Bundle\OAuth2ServerBundle\Manager\AuthorizationCodeManagerInterface;
+use League\Bundle\OAuth2ServerBundle\Manager\RefreshTokenManagerInterface;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
-use League\Bundle\OAuth2ServerBundle\Manager\AccessTokenManagerInterface;
-use League\Bundle\OAuth2ServerBundle\Manager\AuthorizationCodeManagerInterface;
-use League\Bundle\OAuth2ServerBundle\Manager\RefreshTokenManagerInterface;
 
 final class ClearExpiredTokensCommand extends Command
 {

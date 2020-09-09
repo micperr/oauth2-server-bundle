@@ -4,15 +4,15 @@ declare(strict_types=1);
 
 namespace League\Bundle\OAuth2ServerBundle\Tests\Unit;
 
-use League\OAuth2\Server\ResourceServer;
-use PHPUnit\Framework\TestCase;
-use Psr\Http\Message\ServerRequestInterface;
-use Symfony\Component\Security\Core\User\UserProviderInterface;
 use League\Bundle\OAuth2ServerBundle\Security\Authentication\Provider\OAuth2Provider;
 use League\Bundle\OAuth2ServerBundle\Security\Authentication\Token\OAuth2Token;
 use League\Bundle\OAuth2ServerBundle\Security\Authentication\Token\OAuth2TokenFactory;
 use League\Bundle\OAuth2ServerBundle\Tests\Fixtures\FixtureFactory;
 use League\Bundle\OAuth2ServerBundle\Tests\Fixtures\User;
+use League\OAuth2\Server\ResourceServer;
+use PHPUnit\Framework\TestCase;
+use Psr\Http\Message\ServerRequestInterface;
+use Symfony\Component\Security\Core\User\UserProviderInterface;
 
 final class OAuth2ProviderTest extends TestCase
 {

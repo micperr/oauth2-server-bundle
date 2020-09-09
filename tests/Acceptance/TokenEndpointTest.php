@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace League\Bundle\OAuth2ServerBundle\Tests\Acceptance;
 
 use DateTimeImmutable;
-use League\Bundle\OAuth2ServerBundle\Event\UserResolveEvent;
 use League\Bundle\OAuth2ServerBundle\Manager\AccessTokenManagerInterface;
 use League\Bundle\OAuth2ServerBundle\Manager\AuthorizationCodeManagerInterface;
 use League\Bundle\OAuth2ServerBundle\Manager\ClientManagerInterface;

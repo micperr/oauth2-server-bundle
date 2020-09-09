@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace League\Bundle\OAuth2ServerBundle\Tests\Unit;
 
-use PHPUnit\Framework\TestCase;
 use League\Bundle\OAuth2ServerBundle\Model\Client;
+use PHPUnit\Framework\TestCase;
 
 final class ClientEntityTest extends TestCase
 {

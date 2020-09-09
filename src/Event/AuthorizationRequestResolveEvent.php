@@ -4,13 +4,12 @@ declare(strict_types=1);
 
 namespace League\Bundle\OAuth2ServerBundle\Event;
 
+use League\Bundle\OAuth2ServerBundle\Model\Client;
+use League\Bundle\OAuth2ServerBundle\Model\Scope;
 use League\OAuth2\Server\RequestTypes\AuthorizationRequest;
-use LogicException;
 use Psr\Http\Message\ResponseInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Contracts\EventDispatcher\Event;
-use League\Bundle\OAuth2ServerBundle\Model\Client;
-use League\Bundle\OAuth2ServerBundle\Model\Scope;
 
 final class AuthorizationRequestResolveEvent extends Event
 {

@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace League\Bundle\OAuth2ServerBundle\Tests\Acceptance;
 
-use Symfony\Component\Console\Tester\CommandTester;
 use League\Bundle\OAuth2ServerBundle\Manager\ClientManagerInterface;
 use League\Bundle\OAuth2ServerBundle\Model\Client;
+use Symfony\Component\Console\Tester\CommandTester;
 
 final class UpdateClientCommandTest extends AbstractAcceptanceTest
 {

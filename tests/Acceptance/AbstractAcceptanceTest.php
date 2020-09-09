@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace League\Bundle\OAuth2ServerBundle\Tests\Acceptance;
 
+use League\Bundle\OAuth2ServerBundle\Tests\TestHelper;
 use Symfony\Bundle\FrameworkBundle\Console\Application;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
-use League\Bundle\OAuth2ServerBundle\Tests\TestHelper;
 
 abstract class AbstractAcceptanceTest extends WebTestCase
 {

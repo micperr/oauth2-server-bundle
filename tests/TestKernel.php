@@ -8,6 +8,15 @@ use Laminas\Diactoros\ResponseFactory;
 use Laminas\Diactoros\ServerRequestFactory;
 use Laminas\Diactoros\StreamFactory;
 use Laminas\Diactoros\UploadedFileFactory;
+use League\Bundle\OAuth2ServerBundle\Manager\AccessTokenManagerInterface;
+use League\Bundle\OAuth2ServerBundle\Manager\AuthorizationCodeManagerInterface;
+use League\Bundle\OAuth2ServerBundle\Manager\ClientManagerInterface;
+use League\Bundle\OAuth2ServerBundle\Manager\RefreshTokenManagerInterface;
+use League\Bundle\OAuth2ServerBundle\Manager\ScopeManagerInterface;
+use League\Bundle\OAuth2ServerBundle\Tests\Fixtures\FakeGrant;
+use League\Bundle\OAuth2ServerBundle\Tests\Fixtures\FixtureFactory;
+use League\Bundle\OAuth2ServerBundle\Tests\Fixtures\SecurityTestController;
+use League\Bundle\OAuth2ServerBundle\Tests\Support\SqlitePlatform;
 use LogicException;
 use Nyholm\Psr7\Factory as Nyholm;
 use Psr\Http\Message\ResponseFactoryInterface;
@@ -22,15 +31,6 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\HttpKernel\Kernel;
 use Symfony\Component\Routing\RouteCollectionBuilder;
-use League\Bundle\OAuth2ServerBundle\Manager\AccessTokenManagerInterface;
-use League\Bundle\OAuth2ServerBundle\Manager\AuthorizationCodeManagerInterface;
-use League\Bundle\OAuth2ServerBundle\Manager\ClientManagerInterface;
-use League\Bundle\OAuth2ServerBundle\Manager\RefreshTokenManagerInterface;
-use League\Bundle\OAuth2ServerBundle\Manager\ScopeManagerInterface;
-use League\Bundle\OAuth2ServerBundle\Tests\Fixtures\FakeGrant;
-use League\Bundle\OAuth2ServerBundle\Tests\Fixtures\FixtureFactory;
-use League\Bundle\OAuth2ServerBundle\Tests\Fixtures\SecurityTestController;
-use League\Bundle\OAuth2ServerBundle\Tests\Support\SqlitePlatform;
 
 final class TestKernel extends Kernel implements CompilerPassInterface
 {

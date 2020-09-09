@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace League\Bundle\OAuth2ServerBundle\League\Repository;
 
-use League\OAuth2\Server\Repositories\ClientRepositoryInterface;
 use League\Bundle\OAuth2ServerBundle\League\Entity\Client as ClientEntity;
 use League\Bundle\OAuth2ServerBundle\Manager\ClientManagerInterface;
 use League\Bundle\OAuth2ServerBundle\Model\Client as ClientModel;
+use League\OAuth2\Server\Repositories\ClientRepositoryInterface;
 
 final class ClientRepository implements ClientRepositoryInterface
 {

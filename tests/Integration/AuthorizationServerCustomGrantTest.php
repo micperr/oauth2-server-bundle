@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace League\Bundle\OAuth2ServerBundle\Tests\Integration;
 
 use DateInterval;
+use League\Bundle\OAuth2ServerBundle\Tests\Fixtures\FakeGrant;
 use League\OAuth2\Server\AuthorizationServer;
 use ReflectionClass;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
-use League\Bundle\OAuth2ServerBundle\Tests\Fixtures\FakeGrant;
 
 final class AuthorizationServerCustomGrantTest extends KernelTestCase
 {

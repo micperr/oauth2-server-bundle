@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace League\Bundle\OAuth2ServerBundle\Event;
 
-use Symfony\Contracts\EventDispatcher\Event;
 use League\Bundle\OAuth2ServerBundle\Model\Client;
 use League\Bundle\OAuth2ServerBundle\Model\Grant;
 use League\Bundle\OAuth2ServerBundle\Model\Scope;
+use Symfony\Contracts\EventDispatcher\Event;
 
 final class ScopeResolveEvent extends Event
 {

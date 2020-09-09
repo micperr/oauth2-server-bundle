@@ -5,11 +5,11 @@ declare(strict_types=1);
 namespace League\Bundle\OAuth2ServerBundle;
 
 use Doctrine\Bundle\DoctrineBundle\DependencyInjection\Compiler\DoctrineOrmMappingsPass;
+use League\Bundle\OAuth2ServerBundle\DependencyInjection\LeagueOAuth2ServerExtension;
+use League\Bundle\OAuth2ServerBundle\DependencyInjection\Security\OAuth2Factory;
 use Symfony\Bundle\SecurityBundle\DependencyInjection\SecurityExtension;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
-use League\Bundle\OAuth2ServerBundle\DependencyInjection\Security\OAuth2Factory;
-use League\Bundle\OAuth2ServerBundle\DependencyInjection\LeagueOAuth2ServerExtension;
 
 final class LeagueOAuth2ServerBundle extends Bundle
 {

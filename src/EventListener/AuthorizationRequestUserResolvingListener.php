@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace League\Bundle\OAuth2ServerBundle\EventListener;
 
+use League\Bundle\OAuth2ServerBundle\Event\AuthorizationRequestResolveEvent;
 use Symfony\Component\Security\Core\Security;
 use Symfony\Component\Security\Core\User\UserInterface;
-use League\Bundle\OAuth2ServerBundle\Event\AuthorizationRequestResolveEvent;
 
 /**
  * Listener sets currently authenticated user to authorization request context

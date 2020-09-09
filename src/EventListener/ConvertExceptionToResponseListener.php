@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace League\Bundle\OAuth2ServerBundle\EventListener;
 
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpKernel\Event\ExceptionEvent;
 use League\Bundle\OAuth2ServerBundle\Security\Exception\InsufficientScopesException;
 use League\Bundle\OAuth2ServerBundle\Security\Exception\Oauth2AuthenticationFailedException;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpKernel\Event\ExceptionEvent;
 
 /**
  * @author Tobias Nyholm <tobias.nyholm@gmail.com>

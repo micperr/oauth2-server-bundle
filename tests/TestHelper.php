@@ -7,10 +7,6 @@ namespace League\Bundle\OAuth2ServerBundle\Tests;
 use Defuse\Crypto\Crypto;
 use Defuse\Crypto\Exception\CryptoException;
 use Exception;
-use League\OAuth2\Server\CryptKey;
-use Symfony\Bundle\FrameworkBundle\Console\Application;
-use Symfony\Component\Console\Input\ArrayInput;
-use Symfony\Component\Console\Output\NullOutput;
 use League\Bundle\OAuth2ServerBundle\Converter\ScopeConverter;
 use League\Bundle\OAuth2ServerBundle\League\Entity\AccessToken as AccessTokenEntity;
 use League\Bundle\OAuth2ServerBundle\League\Entity\Client as ClientEntity;
@@ -18,6 +14,10 @@ use League\Bundle\OAuth2ServerBundle\League\Entity\Scope as ScopeEntity;
 use League\Bundle\OAuth2ServerBundle\Model\AccessToken as AccessTokenModel;
 use League\Bundle\OAuth2ServerBundle\Model\AuthorizationCode as AuthorizationCodeModel;
 use League\Bundle\OAuth2ServerBundle\Model\RefreshToken as RefreshTokenModel;
+use League\OAuth2\Server\CryptKey;
+use Symfony\Bundle\FrameworkBundle\Console\Application;
+use Symfony\Component\Console\Input\ArrayInput;
+use Symfony\Component\Console\Output\NullOutput;
 
 final class TestHelper
 {
