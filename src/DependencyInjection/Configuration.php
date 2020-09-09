@@ -16,7 +16,7 @@ final class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder(): TreeBuilder
     {
-        $treeBuilder = new TreeBuilder('trikoder_oauth2');
+        $treeBuilder = new TreeBuilder('league_oauth2_server');
         $rootNode = $treeBuilder->getRootNode();
 
         $rootNode->append($this->createAuthorizationServerNode());

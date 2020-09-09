@@ -1,10 +1,5 @@
 # OAuth2-Server Bundle
 
-[![Build Status](https://travis-ci.org/trikoder/oauth2-bundle.svg?branch=master)](https://travis-ci.org/trikoder/oauth2-bundle)
-[![Latest Stable Version](https://poser.pugx.org/trikoder/oauth2-bundle/v/stable)](https://packagist.org/packages/trikoder/oauth2-bundle)
-[![License](https://poser.pugx.org/trikoder/oauth2-bundle/license)](https://packagist.org/packages/trikoder/oauth2-bundle)
-[![Code coverage](https://codecov.io/gh/trikoder/oauth2-bundle/branch/master/graph/badge.svg)](https://codecov.io/gh/trikoder/oauth2-bundle)
-
 Symfony bundle which provides OAuth 2.1 authorization/resource server capabilities on top of the [thephpleague/oauth2-server](https://github.com/thephpleague/oauth2-server) library.
 
 ## Important notes
@@ -33,17 +28,17 @@ This package is currently in the active development.
 1. Require the bundle and a PSR 7/17 implementation with Composer:
 
     ```sh
-    composer require trikoder/oauth2-bundle nyholm/psr7
+    composer require league/oauth2-server-bundle nyholm/psr7
     ```
 
     If your project is managed using [Symfony Flex](https://github.com/symfony/flex), the rest of the steps are not required. Just follow the post-installation instructions instead! :tada:
 
     > **NOTE:** This bundle requires a PSR 7/17 implementation to operate. We recommend that you use [nyholm/psr7](https://github.com/Nyholm/psr7). Check out this [document](docs/psr-implementation-switching.md) if you wish to use a different implementation.
 
-1. Create the bundle configuration file under `config/packages/trikoder_oauth2.yaml`. Here is a reference configuration file:
+1. Create the bundle configuration file under `config/packages/league_oauth2_server.yaml`. Here is a reference configuration file:
 
     ```yaml
-    trikoder_oauth2:
+    league_oauth2_server:
         authorization_server: # Required
 
             # Full path to the private key file.
@@ -116,7 +111,7 @@ This package is currently in the active development.
 1. Enable the bundle in `config/bundles.php` by adding it to the array:
 
     ```php
-    Trikoder\Bundle\OAuth2Bundle\TrikoderOAuth2Bundle::class => ['all' => true]
+    League\Bundle\OAuth2ServerBundle\LeagueOAuth2ServerBundle::class => ['all' => true]
     ```
 
 1. Update the database so bundle entities can be persisted using Doctrine:
@@ -129,7 +124,7 @@ This package is currently in the active development.
 
     ```yaml
     oauth2:
-        resource: '@TrikoderOAuth2Bundle/Resources/config/routes.xml'
+        resource: '@LeagueOAuth2Bundle/Resources/config/routes.xml'
     ```
 
 You can verify that everything is working by issuing a `POST` request to the `/token` endpoint.
@@ -146,10 +141,9 @@ security:
 
 ## Configuration
 
-* [Basic setup](docs/basic-setup.md)
-* [Controlling token scopes](docs/controlling-token-scopes.md)
-* [Password grant handling](docs/password-grant-handling.md)
-* [Implementing custom grant type](docs/implementing-custom-grant-type.md)
+* [Basic setup](basic-setup.md)
+* [Controlling token scopes](controlling-token-scopes.md)
+* [Implementing custom grant type](implementing-custom-grant-type.md)
 
 ## Contributing
 
@@ -157,7 +151,7 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ## Versioning
 
-This project adheres to [Semantic Versioning 2.0.0](http://semver.org/). Randomly breaking public APIs is not an option.
+This project adheres to [Semantic Versioning 2.0.0](https://semver.org/). Randomly breaking public APIs is not an option.
 
 However, starting with version 4, we only promise to follow SemVer on structural elements marked with the [@api tag](https://github.com/php-fig/fig-standards/blob/2668020622d9d9eaf11d403bc1d26664dfc3ef8e/proposed/phpdoc-tags.md#51-api).
 
@@ -167,7 +161,7 @@ All the package releases are recorded in the [CHANGELOG](CHANGELOG.md) file.
 
 ## Reporting issues
 
-Use the [issue tracker](https://github.com/trikoder/oauth2-bundle/issues) to report any issues you might have.
+Use the [issue tracker](https://github.com/thephpleague/oauth2-server-bundle/issues) to report any issues you might have.
 
 ## License
 

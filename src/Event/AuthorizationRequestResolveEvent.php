@@ -56,7 +56,7 @@ final class AuthorizationRequestResolveEvent extends Event
         return $this->response instanceof ResponseInterface;
     }
 
-    public function getResponse(): ResponseInterface
+    public function getResponse(): ?ResponseInterface
     {
         return $this->response;
     }

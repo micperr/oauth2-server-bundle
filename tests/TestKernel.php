@@ -176,7 +176,7 @@ final class TestKernel extends Kernel implements CompilerPassInterface
             ],
         ]);
 
-        $container->loadFromExtension('trikoder_oauth2', [
+        $container->loadFromExtension('league_oauth2_server', [
             'authorization_server' => [
                 'private_key' => '%env(PRIVATE_KEY_PATH)%',
                 'encryption_key' => '%env(ENCRYPTION_KEY)%',

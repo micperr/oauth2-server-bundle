@@ -80,7 +80,7 @@ final class LeagueOAuth2ServerExtension extends Extension implements PrependExte
      */
     public function getAlias()
     {
-        return 'trikoder_oauth2';
+        return 'league_oauth2_server';
     }
 
     /**
