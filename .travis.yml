@@ -15,6 +15,7 @@ cache:
         - $HOME/.composer/cache
 
 before_script:
+    - pecl install timecop-1.2.10
     - composer self-update
     - composer require --no-update symfony/config=$SYMFONY_VERSION symfony/http-kernel=$SYMFONY_VERSION symfony/dependency-injection=$SYMFONY_VERSION symfony/options-resolver=$SYMFONY_VERSION
     - composer require --no-update --dev symfony/framework-bundle=$SYMFONY_VERSION symfony/yaml=$SYMFONY_VERSION

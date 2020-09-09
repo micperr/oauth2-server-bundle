@@ -33,7 +33,7 @@ final class CreateClientCommand extends Command
     protected function configure(): void
     {
         $this
-            ->setDescription('Creates a new oAuth2 client')
+            ->setDescription('Creates a new OAuth2 client')
             ->addOption(
                 'redirect-uri',
                 null,
